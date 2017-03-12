@@ -5,13 +5,24 @@ namespace HuTong\Ycore;
  */
 class Xcontroller extends \Yaf\Controller_Abstract
 {
+	protected $layout;
+
 	public function init()
 	{
 		//do not call render for ajax request
-		if($this->isJson())
+		if($this->isAjax())
 		{
 			\Yaf\Dispatcher::getInstance()->autoRender(FALSE);
 		}
+		if($this->layout)
+		{
+			$this->setLayout($this->layout);
+		}
+	}
+	
+	public function setLayout($layout)
+	{
+		$this->getResPonse()->layout = $layout;
 	}
 
 	/**

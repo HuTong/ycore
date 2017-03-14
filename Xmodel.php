@@ -6,19 +6,21 @@ use HuTong\Database\Database as Database;
  */
 class Xmodel
 {
-	protected $db;
+	private $conn;
 
 	public function __construct($dbName = 'default')
 	{
-		if(is_null($this->db))
+		if(!isset($this->conn[$dbName]))
 		{
 			$config = \Yaf\Registry::get('config')->database->toArray();
 			if(isset($config[$dbName]))
 			{
-				$this->db = Database::getInstance($config[$dbName], $dbName);
+				$this->conn[$dbName] = Database::getInstance($config[$dbName], $dbName);
 			}else{
 				throw new \Exception('找不到数据库配置');
 			}
 		}
+
+		return $this->conn[$dbName];
 	}
 }

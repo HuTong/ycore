@@ -23,4 +23,9 @@ class Xmodel
 
 		return $this->conn[$dbName];
 	}
+
+	public function getEscape($string)
+	{
+		return $string;
+	}
 }

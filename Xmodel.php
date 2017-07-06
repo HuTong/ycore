@@ -1,6 +1,8 @@
 <?php
 namespace HuTong\Ycore;
+
 use HuTong\Database\Database as Database;
+
 /**
  * Model 基类
  */

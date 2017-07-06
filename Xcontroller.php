@@ -1,5 +1,6 @@
 <?php
 namespace HuTong\Ycore;
+
 /**
  * 过滤一些用户输入的信息
  */

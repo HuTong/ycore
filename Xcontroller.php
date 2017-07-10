@@ -1,9 +1,9 @@
 <?php
-namespace HuTong\Ycore;
-
 /**
  * 过滤一些用户输入的信息
  */
+namespace HuTong\Ycore;
+
 class Xcontroller extends \Yaf\Controller_Abstract
 {
 	public function init()

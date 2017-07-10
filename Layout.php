@@ -1,10 +1,10 @@
 <?php
-namespace HuTong\Ycore;
-
 /**
  * 布局插件
  * 用来控制器渲染视图的时候使用布局
  */
+namespace HuTong\Ycore;
+
 class Layout extends \Yaf\Plugin_Abstract
 {
 	private $_layoutDir;

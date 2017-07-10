@@ -21,7 +21,7 @@ class Xmodel
 				$this->instance = new Database($config);
 			}
 
-			$this->conn[$dbName] = $this->instance->connection($dbName);
+			$this->conn[$dbName] = $this->instance->getInstance($dbName);
 		}
 
 		return $this->conn[$dbName];

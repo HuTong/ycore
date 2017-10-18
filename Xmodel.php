@@ -29,6 +29,8 @@ class Xmodel
 
 	public function getEscape($string)
 	{
-		return $string;
+		$replace = array('%'=>'\\%');
+
+		return strtr($string, $replace);
 	}
 }

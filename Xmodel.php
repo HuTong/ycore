@@ -11,13 +11,17 @@ class Xmodel
 	private $conn;
 	private $instance;
 
-	public function __construct($dbName = 'default')
+	public function __construct($config = null, $dbName = 'default')
 	{
 		if(!isset($this->conn[$dbName]))
 		{
 			if(is_null($this->instance))
 			{
-				$config = \Yaf\Registry::get('config')->database->toArray();
+				if(is_null($config))
+				{
+					$config = \Yaf\Registry::get('config')->database->toArray();
+				}
+
 				$this->instance = new Database($config);
 			}
 

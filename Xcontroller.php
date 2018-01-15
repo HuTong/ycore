@@ -6,6 +6,8 @@ namespace HuTong\Ycore;
 
 class Xcontroller extends \Yaf\Controller_Abstract
 {
+	protected $configs;
+
 	public function init()
 	{
 		//do not call render for ajax request
@@ -13,6 +15,8 @@ class Xcontroller extends \Yaf\Controller_Abstract
 		{
 			\Yaf\Dispatcher::getInstance()->autoRender(FALSE);
 		}
+
+		$this->configs = \Yaf\Registry::get('config')->toArray();
 	}
 
 	public function setLayout($layout)
